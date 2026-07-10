@@ -20,7 +20,7 @@ plug "romkatv/powerlevel10k"
 autoload -Uz compinit
 compinit
 
-fastfetch
+fastfetch --pipe false
 
 # eza aliases for structured, colored directory listings
 alias ls="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions"
