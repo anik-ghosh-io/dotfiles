@@ -1,0 +1,3 @@
+**essential apps
+rofi
+waybar
