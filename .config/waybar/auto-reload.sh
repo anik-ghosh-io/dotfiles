@@ -1,3 +1,1 @@
-while inotifywait -e close_write ~/dotfiles/.config/waybar/config.jsonc; do
-    pkill -SIGUSR2 waybar
-done
+while inotifywait -e close_write ~/dotfiles/.config/waybar; do pkill -SIGUSR2 waybar; done
