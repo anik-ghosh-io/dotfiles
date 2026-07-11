@@ -35,3 +35,10 @@ window#waybar {
 #workspaces button.urgent {
     background-color: rgba(227,81,73,1);
 }
+
+#battery {
+    padding: 5px 8px;
+    margin: 5px 10px 5px 0px;
+    background-color: @dark-8;
+    border-radius: 8px;
+}
