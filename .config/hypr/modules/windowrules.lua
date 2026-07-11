@@ -29,3 +29,10 @@ hl.window_rule({
 
     no_focus = true,
 })
+
+hl.layer_rule({
+    name = "rofi-popup",
+    match = { namespace = "rofi" },
+    animation = "slide bottom",
+    dim_around = true
+})
