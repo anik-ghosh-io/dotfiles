@@ -1,0 +1,1 @@
+while inotifywait -e close_write ~/dotfiles/.config/waybar; do pkill -SIGUSR2 waybar; done
