@@ -5,7 +5,7 @@
 -- Set programs that you use
 local terminal    = "kitty"
 local fileManager = "dolphin"
-local menu        = "hyprlauncher"
+local menu        = "~/.config/rofi/type-5/launcher.sh"
 
 ---------------------
 ---- KEYBINDINGS ----
