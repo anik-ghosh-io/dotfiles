@@ -11,7 +11,7 @@
 -- Set programs that you use
 local terminal    = "kitty"
 local fileManager = "dolphin"
-local menu        = "hyprlauncher"
+local menu        = "rofi"
 
 hl.on("hyprland.start", function () 
   hl.exec_cmd(terminal)

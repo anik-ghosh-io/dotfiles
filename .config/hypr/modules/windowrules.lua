@@ -35,4 +35,8 @@ hl.layer_rule({
     match      = { namespace = "rofi" },
     animation  = "slide bottom",
     dim_around = true
+hl.config({
+    xwayland = {
+        force_zero_scaling = true,
+    },
 })
