@@ -29,3 +29,9 @@ hl.window_rule({
 
     no_focus = true,
 })
+
+hl.config({
+    xwayland = {
+        force_zero_scaling = true,
+    },
+})
