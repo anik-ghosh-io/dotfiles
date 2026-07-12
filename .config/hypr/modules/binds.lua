@@ -14,8 +14,8 @@ local menu        = "~/.config/rofi/type-5/launcher.sh"
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 
-hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
-local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
+hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal)) --Opening Terminal
+local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close()) --Closing Window
 
 -- local binds={
 --     {key = mainMod .. "+ Q", }
