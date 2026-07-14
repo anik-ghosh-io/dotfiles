@@ -1,7 +1,7 @@
 {
   "layer": "bottom",
   "position": "top",
-  "height": 44,
+  "height": 30,
   "spacing": 2,
   "exclusive": true,
   "gtk-layer-shell": true,
@@ -17,6 +17,7 @@
   "modules-center": ["mpris"],
   "modules-right": [
     "pulseaudio",
+    "network",
     "memory",
     "cpu",
     "tray",
@@ -131,7 +132,7 @@
   },
 
   "network": {
-    "interface": "wlp3s0",
+    "interface": "wlan0",
     "format": "{ifname}",
     "format-wifi": "{essid} ",
     "max-length": 50,

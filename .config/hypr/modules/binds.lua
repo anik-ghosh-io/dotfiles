@@ -21,6 +21,8 @@ local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close()) --Clos
 --     {key = mainMod .. "+ Q", }
 -- }
 
+--hl.bind("Ctrl + Alt + Del", hl.dsp.exce_cmd("wlogout")
+
 -- closeWindowBind:set_enabled(false)
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
