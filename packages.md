@@ -12,3 +12,4 @@
 #### pipewire-audio
 #### pipewire-pulse
 #### cava
+#### hyprpolkitagent
