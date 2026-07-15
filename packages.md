@@ -5,5 +5,11 @@
 #### waybar
 #### swaync
 #### hypridle
-#### awwww
+#### awww
+#### brave-origin-bin
+#### pavucontrol
+#### pipewire
+#### pipewire-alsa
+#### pipewire-audio
+#### pipewire-pulse
 ####
