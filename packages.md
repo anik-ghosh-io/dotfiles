@@ -6,7 +6,6 @@
 #### swaync
 #### hypridle
 #### awww
-#### brave-origin-bin
 #### pavucontrol
 #### pipewire
 #### pipewire-alsa
