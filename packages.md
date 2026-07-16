@@ -1,4 +1,4 @@
-# **Important Packages**
+## **Important Packages**
 #### ttf-jetbrains-mono-nerd
 #### inotify-tools
 #### rofi (for-app-launcher)
