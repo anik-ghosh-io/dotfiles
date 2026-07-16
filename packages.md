@@ -13,5 +13,5 @@
 #### pipewire-pulse
 #### cava
 #### hyprpolkitagent
-#### sudo pacman -S grim slurp wl-clipboard pyside6 python-yaml
+#### hyprshot
 
