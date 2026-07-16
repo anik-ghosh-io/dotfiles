@@ -15,4 +15,5 @@
 #### hyprpolkitagent (for-disk-authentication)
 #### hyprshot (for-snipping-and-screenshots)
 #### xdg-desktop-portal-hyprland-git (for-screen-sharing)
+#### cmake (for-build-system-generator)
 
