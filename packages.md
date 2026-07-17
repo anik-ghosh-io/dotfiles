@@ -18,6 +18,6 @@
 #### cmake (for-build-system-generator)
 #### wl-clipboard (for-running-clipboard-managers)
 #### hyprpicker (for-eyedropping)
-#### cliphist
-#### hyprkcs-git
+#### cliphist (for-clipboard)
+#### hyprkcs-git (for-binds-managing)
 
