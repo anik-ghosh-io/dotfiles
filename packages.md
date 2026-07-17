@@ -20,4 +20,5 @@
 #### hyprpicker (for-eyedropping)
 #### cliphist (for-clipboard)
 #### hyprkcs-git (for-binds-managing)
+#### nwg-look (for-gtk-modifications)
 
