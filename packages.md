@@ -1,5 +1,6 @@
 ## **Important Packages**
 #### ttf-jetbrains-mono-nerd
+#### cascadia font
 #### inotify-tools
 #### rofi (for-app-launcher)
 #### waybar (for-taskbar)
@@ -19,4 +20,3 @@
 #### wl-clipboard (for-running-clipboard-managers)
 #### hyprpicker (for-eyedropping)
 #### cliphist (for-clipboard)
-
