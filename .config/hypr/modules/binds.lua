@@ -70,7 +70,13 @@ hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 
 -- Full Screen Screenshot Bind
-hl.bind(mainMod .."+ S", hl.dsp.exec_cmd("hyprshot -m output -m eDP-1"))
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("hyprshot -m output -m eDP-1"))
 
 -- Reginoal Screenshot Bind
-hl.bind(mainMod .."+ D", hl.dsp.exec_cmd("hyprshot -m region"))
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("hyprshot -m region"))
+
+-- Clipboard management
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("cliphist list | rofi -dmenu | cliphist decode | wl-copy"))
+
+-- Eyedropper
+hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("hyprpicker"))
