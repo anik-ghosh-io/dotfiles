@@ -1,34 +1,32 @@
 ---------------------
+---- KEYBINDINGS ----
+---------------------
+
+---------------------
 ---- MY PROGRAMS ----
 ---------------------
+local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Set programs that you use
 local terminal    = "kitty"
 local fileManager = "dolphin"
+
+---------------------
+------- Menu --------
+---------------------
 local menu        = "~/.config/rofi/type-5/launcher.sh"
-
----------------------
----- KEYBINDINGS ----
----------------------
-
-local mainMod = "SUPER" -- Sets "Windows" key as main modifier
-
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal)) --Opening Terminal
 local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close()) --Closing Window
 
--- local binds={
---     {key = mainMod .. "+ Q", }
--- }
-
---hl.bind("Ctrl + Alt + Del", hl.dsp.exce_cmd("wlogout")
+hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd("wlogout"))
 
 -- closeWindowBind:set_enabled(false)
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager)) -- FileManager 
+hl.bind(mainMod .. " + G", hl.dsp.window.float({ action = "toggle" })) --Enables Floating windows
+hl.bind(mainMod .. " + P", hl.dsp.window.pseudo()) -- Makes small 
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 
 -- Move focus with mainMod + arrow keys
@@ -40,18 +38,19 @@ hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do
-    local key = i % 10 -- 10 maps to key 0
-    hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
-    hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
+	local key = i % 10 -- 10 maps to key 0
+	hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
+	hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
 end
-
--- Example special workspace (scratchpad)
-hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
-
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
+
+hl.bind("SUPER + TAB", hl.dsp.focus({ workspace = "e+1" })) -- Cycling through the Workspaces
+
+-- Example special workspace (scratchpad)
+hl.bind(mainMod .. " + A",         hl.dsp.workspace.toggle_special("magic")) 
+hl.bind(mainMod .. " + SHIFT + A", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
@@ -71,3 +70,27 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 
+-- Resize active window using SUPER + ALT + H/J/K/L
+hl.bind("SUPER + ALT + H", hl.dsp.window.resize({x = -40, y= 0}))
+hl.bind("SUPER + ALT + K", hl.dsp.window.resize())
+hl.bind("SUPER + ALT + J", hl.dsp.window.resize({x = 0, y = 40 }))
+hl.bind("SUPER + ALT + L", hl.dsp.window.resize({x = 40, y = 0 }))
+
+---------------------
+---- SCREENSHOTS ----
+---------------------
+-- Capture a selected region (Matches the standard SUPER + SHIFT + S muscle memory)
+hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region"))
+
+-- Capture the entire monitor (Mapped to the standard Print Screen key)
+hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m output"))
+
+-- Capture a specific window
+hl.bind("ALT + PRINT", hl.dsp.exec_cmd("hyprshot -m window"))
+
+
+---------------------
+----- CLIPBOARD -----
+---------------------
+-- Launch the Clipse TUI in a floating Kitty terminal
+hl.bind("SUPER + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"))
